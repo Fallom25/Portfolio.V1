@@ -1,0 +1,26 @@
+.home-img{
+  position: relative;
+  text-align: center; 
+}
+
+.home-img> h1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-38%, -55%);
+  color:rgb(96, 63, 131);
+  font-size: 3.5vw;
+  }
+
+  .parallax1{
+    background-image: url("photos/christmass.jpg");  
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+     background-attachment: fixed;
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size:cover;
+  } 

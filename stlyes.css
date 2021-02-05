@@ -1,0 +1,41 @@
+html {
+  scroll-behavior: smooth;
+  background-color: #C7D3D4;
+  color:rgb(96, 63, 131);
+  font-family: 'Bungee', sans-serif;
+}
+
+nav{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgb(96, 63, 131);
+  color:#C7D3D4;
+}
+
+nav p{
+  margin: 20px 40px;
+}
+
+nav > ul{ 
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 0px 20px 40px;
+}
+
+nav a:link{
+  color:#C7D3D4;
+  text-decoration: none;
+}
+
+
+nav a:visited{
+  color:#C7D3D4;
+}
+
+
+
+  footer > div{
+    display:flex;
+    justify-content: space-between;
+  }
