@@ -9,19 +9,19 @@
   <link rel="stylesheet" href="background.css">
   <link rel="stylesheet" href="skills.css">
   <link rel="stylesheet" href="projects.css">
-  <link rel="stylesheet" href="contact.css">
   <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <nav>
       <!-- eg. Home, Projects, Bio/CV and Contact -->
       <p>Madd Sheppard</p>
       <ul>
-        <li><a href="#jump-home">Home</a></li>
+        <li><a href="jump-home">Home</a></li>
         <li><a href="#jump-background">Background</a></li>
         <li><a href="#jump-skills">Skills</a></li>
         <li><a href="#jump-projects">Projects</a></li>
-        <li><a href="#jump-contact">Contact Me</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
       </ul>
     </nav>    
   <header>
@@ -36,8 +36,8 @@
       </div>
     </div>
 
-    <div class="background">
-      <h1 id="jump-background">Background</h1>
+    <div class="background" id="jump-background">
+      <h1 >Background</h1>
       <p>A bunch of stuff about me ... and now some gibberish until I write this section...
         I now realise that I must relax a bit and try and let the report come along I don’t need to try and get everyone to go at the same pace as me. 
         I need to meditate more, allowing me to no get overwhelmed with the number of things I must do. 
@@ -64,20 +64,41 @@
 
     </div>
 
-    <div class="contact">
-      <h1 id="jump-contact">Contact Me</h1>
-    </div>
-
   </main>
   <footer>
-    <!-- list of links using symbols (Git hub, email, linkedin ) -->
+    <div class="icons">
+          <!-- list of links using symbols (Git hub, email, linkedin ) -->
+      <a href="https://github.com/Fallom25" target="_blank">
+        <i class="fa fa-github fa-4x" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/madd-sheppard-050a0178" target="_blank">
+        <i class="fa fa-linkedin fa-4x" aria-hidden="true"></i>
+      </a>
+      <a href="contact.html">
+        <i class="fa fa-envelope fa-4x" aria-hidden="true"></i>
+      </a>
+    </div>
+
     <!-- Copyright symbol, date and author info -->
     <div>
-      <p>Designed by Madd Sheppard </p>
+      <p>
+        Designed by Madd Sheppard 
+        <i class="fa fa-copyright"  aria-hidden="true"></i>
+        <span id="year"></span>
+      </p>
       <p>^.^</p>
     </div>
+
   </footer>
 </body>
+
+<script>
+
+  // copyright date
+  var d = new Date();
+  document.getElementById("year").innerHTML = d.getFullYear();
+
+</script>
 
 </html>
 

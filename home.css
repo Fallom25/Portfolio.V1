@@ -13,7 +13,7 @@
   }
 
   .parallax1{
-    background-image: url("photos/christmass.jpg");  
+    background-image: url("/Portfolio/photos/christmass.jpg");  
 
     /* Set a specific height */
     min-height: 500px; 
@@ -24,3 +24,5 @@
     background-repeat:no-repeat;
     background-size:cover;
   } 
+
+  
