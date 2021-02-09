@@ -21,6 +21,125 @@
       <li><a href="home.html#jump-projects">Projects</a></li>
       <li><a href="contact.html">Contact Me</a></li>
     </ul>
-  </nav>    
+  </nav> 
+  
+  <main>
+    <form class="contact_form" onsubmit="return submit_message(event);">
+        <!--Email-->
+        <label for="email">Email: </label>
+        <input type="text" name="email" id="email" required>
+
+        <!--Full Name -->
+        <label for="full_name">Full Name: </label>
+        <input type="text" name="full_name" id="full_name" required>
+
+        <!--Message-->
+        <label for="comment">Comment: </label>
+        <textarea name="comment" class ="message" id="comment" rows="3" cols="20" placeholder="--Message--"></textarea>
+
+        <label for="bonus">Tell us more: </label>
+        <textarea name="bonus" class ="message" id="bonus" rows="3" cols="20" placeholder="What's your favourite Ice Cream?"></textarea>
+        
+        <!--Clear-->
+        <input type="reset" value ="Clear">
+
+        <!--Submit-->
+        <input type="submit" value="Submit Form">   
+    </form>
+</main>
+
+
+
+<footer>
+  <div class="icons">
+        <!-- list of links using symbols (Git hub, email, linkedin ) -->
+    <a href="https://github.com/Fallom25" target="_blank">
+      <i class="fa fa-github fa-4x icon" aria-hidden="true"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/madd-sheppard-050a0178" target="_blank">
+      <i class="fa fa-linkedin fa-4x icon" aria-hidden="true"></i>
+    </a>
+    <a href="contact.html">
+      <i class="fa fa-envelope fa-4x icon"  aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <!-- Copyright symbol, date and author info -->
+  <div>
+    <p>
+      Designed by Madd Sheppard 
+      <i class="fa fa-copyright"  aria-hidden="true"></i>
+      <span id="year"></span>
+    </p>
+    <p>^.^</p>
+  </div>
+
+</footer>
 </body>
+
+<script>
+    function deleteContacts(){
+        if (window.sessionStorage.getItem("contacts")){
+            window.sessionStorage.removeItem("contacts");
+        }
+
+        render_message();
+    }
+    
+    function submit_message(event) {
+        event.preventDefault();
+        alert("The form was submited");
+        
+        const email = document.getElementById("email").value;
+        const full_name = document.getElementById("full_name").value;
+        const feedback_type = document.getElementById("feedback_type").value;
+        const comment = document.getElementById("comment").value;
+        const bonus = document.getElementById("bonus").value;
+
+        const contactObject = {
+            email, full_name, feedback_type, comment, bonus
+        };
+
+        let existingContacts = [];
+
+        if(window.sessionStorage.getItem("contacts")) {
+            existingContacts=
+                JSON.parse(window.sessionStorage.getItem("contacts"));
+        }
+
+        existingContacts.push(contactObject);
+
+        window.sessionStorage.setItem(
+            "contacts",
+            JSON.stringify(existingContacts)
+        );
+
+        render_message();
+    }
+    
+    function render_message() {
+        let existingContacts = [];
+
+        if(window.sessionStorage.getItem("contacts")) {
+            existingContacts=
+                JSON.parse(window.sessionStorage.getItem("contacts"));
+        }
+
+        let list_items=[];
+        for(let i=0; i< existingContacts.length; i++){
+            let list_item = "";
+            const current_contact = existingContacts[i];
+            list_item += `<dt>${current_contact.full_name} - ${current_contact.email}</dt>`;
+            list_item += `<dd>${current_contact.comment}</dd>`;
+            list_item += `<br>`;
+            list_items.push(list_item); 
+        }
+
+        let desc_list = document.getElementById('existingContacts');
+        desc_list.innerHTML = list_items.join('');
+    }
+
+    render_message();
+</script>
+
 </html>

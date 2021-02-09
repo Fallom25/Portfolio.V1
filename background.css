@@ -1,0 +1,29 @@
+.background{
+  display: flex;
+  justify-content: center;
+
+}
+
+#background-background{
+  display:flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  width:60%;
+  
+}
+
+#background-background>p{ 
+  background-color:var(--accent);
+  border-radius: 5px;
+  padding: 15px;  
+  transition: background-color 0.75s ease-in;
+  font-family: 'Big Shoulders Display';
+  font-size: 30px;
+}
+
+#background-background>p:hover{
+  background-color:var(--background);
+  transition: background-color 0.75s ease-out;
+
+}
